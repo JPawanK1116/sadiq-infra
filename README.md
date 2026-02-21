@@ -4,6 +4,13 @@ A premium corporate website for **Sadiq Infra**, built with React, Vite, and Tai
 
 ---
 
+> [!CAUTION]
+> **`node_modules/` and `dist/` are NOT included in this repository.** This is standard practice for all Node.js projects.
+> - `node_modules/` is auto-generated when you run `npm install` (it reads `package.json` and downloads all dependencies).
+> - `dist/` is auto-generated when you run `npm run build` (it compiles the production bundle).
+>
+> **You must run `npm install` first before starting the project.**
+
 ## 🚀 How to Run
 
 ### Prerequisites
