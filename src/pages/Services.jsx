@@ -7,86 +7,84 @@ import { servicesData } from '../data/servicesData';
 
 const Services = () => {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-white">
             <MetaWrapper
-                title="House & Building Construction Services in Guntur"
-                description="We offer Individual House Construction, Villa Development, Commercial Complexes, and Structural Repairs. Best prices and government grade quality."
+                title="Sadiq Infra Services | Civil, Sewerage & Irrigation Contracts"
+                description="Government-approved specialists in CC Roads, Deep Excavation pipelines, Irrigation Canal desilting, and comprehensive Structural Engineering."
             />
 
             {/* Page Header */}
-            <div className="bg-primary text-white py-16 text-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('/images/commercial-building.jpg')] bg-cover bg-center"></div>
+            <div className="bg-primary text-white py-20 text-center relative overflow-hidden">
+                <div className="absolute inset-0 opacity-20 bg-[url('/images/capability-sewerage.jpg')] bg-cover bg-center"></div>
                 <div className="container mx-auto px-4 relative z-10">
-                    <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 hero-heading">Our Services</h1>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto hero-subtext">
-                        Comprehensive construction solutions tailored to your needs.
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-4 hero-heading uppercase tracking-wide">
+                        Our Expertise
+                    </h1>
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto font-light hero-subtext">
+                        Heavy engineering and public infrastructure works executed perfectly.
                     </p>
                 </div>
             </div>
 
             <Breadcrumbs />
 
-            <section className="py-20 bg-white">
+            <section className="py-24">
                 <div className="container mx-auto px-4">
-                    <div className="space-y-24">
+                    <div className="space-y-32">
                         {servicesData.map((service, index) => {
                             const Icon = service.icon;
                             return (
                                 <div
                                     key={service.id}
                                     id={service.title.toLowerCase().replace(/\s+/g, '-')}
-                                    className={`flex flex-col lg:flex-row gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                                    className={`flex flex-col lg:flex-row gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                                         }`}
                                 >
                                     {/* Image Side */}
                                     <div className="lg:w-1/2 w-full">
-                                        <div className="relative rounded-lg overflow-hidden shadow-xl group">
-                                            <img
-                                                src={service.image}
-                                                alt={service.title}
-                                                className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
-                                                loading="lazy"
-                                            />
-                                            <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors"></div>
+                                        <div className="relative border-2 border-light shadow-2xl p-3 bg-white">
+                                            <div className="overflow-hidden relative group">
+                                                <img
+                                                    src={service.image}
+                                                    alt={service.title}
+                                                    className="w-full h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                            {/* Decorative box */}
+                                            <div className="absolute -z-10 -bottom-6 -right-6 w-full h-full bg-secondary/10 hidden md:block"></div>
                                         </div>
                                     </div>
 
                                     {/* Content Side */}
                                     <div className="lg:w-1/2 w-full">
-                                        <div className="flex items-center mb-4">
+                                        <div className="flex items-center mb-8 border-b-2 border-gray-100 pb-6">
                                             {Icon && (
-                                                <div className="p-3 bg-secondary/10 rounded-full text-secondary mr-4">
-                                                    <Icon size={32} />
+                                                <div className="p-4 bg-primary rounded-sm text-secondary mr-6 shadow-md">
+                                                    <Icon size={40} strokeWidth={1.5} />
                                                 </div>
                                             )}
-                                            <h2 className="text-3xl font-heading font-bold text-primary">
+                                            <h2 className="text-4xl font-heading font-extrabold text-primary leading-tight">
                                                 {service.title}
                                             </h2>
                                         </div>
 
-                                        <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                                        <p className="text-xl text-gray-600 mb-10 leading-relaxed font-light">
                                             {service.description}
                                         </p>
 
-                                        <div className="bg-gray-50 p-6 rounded-lg mb-6 border border-gray-100">
-                                            <h4 className="font-bold text-primary mb-4 uppercase tracking-wide text-sm">
-                                                Key Benefits
+                                        <div className="bg-light p-8 border-l-4 border-secondary">
+                                            <h4 className="font-extrabold text-primary mb-6 uppercase tracking-widest text-sm">
+                                                Execution Capabilities
                                             </h4>
-                                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
                                                 {service.benefits.map((benefit, idx) => (
-                                                    <li key={idx} className="flex items-center text-gray-700">
-                                                        <CheckCircle size={16} className="text-secondary mr-2 flex-shrink-0" />
+                                                    <li key={idx} className="flex items-start text-gray-700 font-medium">
+                                                        <CheckCircle size={20} className="text-secondary mr-3 mt-0.5 flex-shrink-0" />
                                                         {benefit}
                                                     </li>
                                                 ))}
                                             </ul>
-                                        </div>
-
-                                        <div>
-                                            <span className="font-bold text-primary">Ideal for: </span>
-                                            <span className="text-gray-600 italic">
-                                                {service.idealFor}
-                                            </span>
                                         </div>
                                     </div>
                                 </div>

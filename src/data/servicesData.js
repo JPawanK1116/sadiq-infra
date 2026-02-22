@@ -1,88 +1,59 @@
-import { Home, Building2, Warehouse, Hammer, Ruler, Hotel } from 'lucide-react';
+import { Building2, Droplets, Waves, Tractor } from 'lucide-react';
 
 export const servicesData = [
     {
         id: 1,
-        title: "Individual House Construction",
-        description: "End-to-end customizable home construction services tailored to your lifestyle and budget.",
-        icon: Home,
-        image: "/images/house-construction.jpg",
+        title: "Civil & Structural Engineering",
+        icon: Building2,
+        description: "Expert execution of robust civil and structural works for government and major private sectors.",
         benefits: [
-            "Custom Floor Plan Design",
-            "Vastu Compliant Planning",
-            "Quality Material Selection",
-            "On-Time Project Delivery"
+            "Cement Concrete Roads",
+            "RCC Culverts",
+            "Structural Repairs",
+            "Waterproofing Treatment",
+            "Gunniting & Sand Blasting"
         ],
-        idealFor: "Plot owners looking to build their dream home."
+        image: "/images/service-structural-repair.jpg"
     },
     {
         id: 2,
-        title: "Villas & Duplex",
-        description: "Premium villa and duplex construction with luxury finishes and modern amenities.",
-        icon: Hotel, // Using Hotel as proxy for villa
-        image: "/images/villa-construction.jpg",
+        title: "Water & Sewerage Systems",
+        icon: Droplets,
+        description: "Large-scale pipeline and sewerage network installations with deep excavation capabilities.",
         benefits: [
-            "Luxury Interior Design",
-            "Smart Home Integration",
-            "Landscape & Garden Planning",
-            "Premium Fittings & Fixtures"
+            "HDPE Pipeline Installation",
+            "DI & RCC Pipe Laying",
+            "Deep Excavation up to 9 meters",
+            "Leak Detection & Rectification",
+            "Pumping Main Repairs"
         ],
-        idealFor: "Clients seeking luxury living spaces."
+        image: "/images/service-hdpe-installation.jpg"
     },
     {
         id: 3,
-        title: "Apartment Buildings",
-        description: "Structural contracting and full-scale construction for multi-story residential apartments.",
-        icon: Building2,
-        image: "/images/apartment-construction.jpg",
+        title: "Irrigation & Canal Works",
+        icon: Waves,
+        description: "Comprehensive irrigation infrastructure development, restoration, and heavy maintenance.",
         benefits: [
-            "High-Rise Structural Expertise",
-            "Efficient Space Utilization",
-            "Code Compliance & Safety",
-            "Scalable Workforce"
+            "Canal Desilting",
+            "Weed Removal Operations",
+            "Lock Chamber Gate Repairs",
+            "Shutter Installation & Repairs",
+            "Cross Bund Formation"
         ],
-        idealFor: "Real estate developers and landowner joint ventures."
+        image: "/images/service-weed-removal.jpg"
     },
     {
         id: 4,
-        title: "Commercial Complexes",
-        description: "Construction of shopping complexes, office spaces, and commercial establishments.",
-        icon: Warehouse,
-        image: "/images/commercial-building.jpg",
+        title: "Land Development",
+        icon: Tractor,
+        description: "Professional site preparation, levelling, and heavy land development services.",
         benefits: [
-            "Modern Facade Design",
-            "Optimized Retail Spaces",
-            "Parking & Utility Planning",
-            "Durable Commercial Grade Build"
+            "Jungle Clearance",
+            "Mechanical Site Preparation",
+            "Gravel Filling",
+            "Earthwork & Levelling"
         ],
-        idealFor: "Business owners and commercial investors."
-    },
-    {
-        id: 5,
-        title: "Road Development",
-        description: "Government grade road construction including CC roads, BT roads, and drainage systems.",
-        icon: Ruler, // Ruler as proxy for measurement/road layout
-        image: "/images/road-construction.jpg",
-        benefits: [
-            "Heavy Machinery Fleet",
-            "Material Quality Assurance",
-            "Government Norms Compliance",
-            "Timely Execution"
-        ],
-        idealFor: "Government contracts and private township developers."
-    },
-    {
-        id: 6,
-        title: "Renovation & Remodeling",
-        description: "Transforming existing structures with modern designs, structural strengthening, and facelifts.",
-        icon: Hammer,
-        image: "/images/renovation-work.jpg",
-        benefits: [
-            "Structural Strengthening",
-            "Modern Facade Updates",
-            "Interior Space Re-planning",
-            "Waterproofing & Repairs"
-        ],
-        idealFor: "Old building owners wanting a modern upgrade."
+        image: "/images/service-excavation.jpg"
     }
 ];

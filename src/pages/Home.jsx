@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Clock, Users, HardHat, ArrowRight } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Building2, TrendingUp, CheckCircle, FileText, CheckSquare, Hammer } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 import ServiceCard from '../components/ServiceCard';
 import ProjectCard from '../components/ProjectCard';
@@ -11,186 +11,232 @@ import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
 
 const Home = () => {
-    // Preload hero image logic could go here or in a custom hook
-
     return (
         <div className="flex flex-col">
             <MetaWrapper
-                title="Construction Company in Guntur | Best Govt Contractors"
-                description="Sadiq Infra Experts in Residential Construction, Commercial Building, and Road Works with Government Grade Quality. Call for Free Consultation."
+                title="Sadiq Infra | Official Infrastructure & Civil Engineering"
+                description="Government-Approved Infrastructure Contractors Since 2012. Specializing in Civil, Irrigation, Sewerage & Urban Development across AP & Telangana."
             />
 
             {/* Hero Section */}
             <section className="relative h-screen min-h-[600px] flex items-center">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/images/hero-construction.jpg"
-                        alt="Construction Site"
+                        src="/images/hero-government-infra.jpg"
+                        alt="Government Infrastructure Construction Site"
                         className="w-full h-full object-cover"
-                        loading="eager" // Important for LCP
+                        loading="eager"
                     />
-                    <div className="absolute inset-0 bg-black/60"></div>
+                    <div className="absolute inset-0 bg-primary/70"></div>
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10 text-white">
-                    <div className="max-w-3xl">
-                        <p className="text-secondary font-bold tracking-widest uppercase mb-4 animate-fade-in-up">
-                            Experienced Government Contractors
+                <div className="container mx-auto px-4 relative z-10 text-white mt-12">
+                    <div className="max-w-4xl">
+                        <p className="inline-block bg-secondary text-primary font-bold tracking-widest uppercase mb-6 px-4 py-1.5 rounded-sm animate-fade-in-up text-sm">
+                            Government-Approved Contractors Since 2012
                         </p>
-                        <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight animate-fade-in-up delay-100 hero-heading">
-                            Building Trust. <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200">
-                                Delivering Strength.
-                            </span>
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-8 leading-tight animate-fade-in-up delay-100 hero-heading">
+                            Building Critical <br />
+                            <span className="text-secondary">National Infrastructure.</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in-up delay-200 max-w-2xl hero-subtext">
-                            Now serving private clients with the same rigorous quality standards used in government infrastructure projects.
+                        <p className="text-lg md:text-2xl text-gray-200 mb-10 animate-fade-in-up delay-200 max-w-2xl font-light hero-subtext leading-relaxed">
+                            Delivering Large-Scale Civil, Irrigation, Sewerage & Urban Development Projects Across Andhra Pradesh & Telangana.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
                             <Link
-                                to="/contact"
-                                className="bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-opacity-90 transition-all text-center"
+                                to="/projects"
+                                className="bg-secondary text-primary px-8 py-4 rounded-sm font-bold text-lg hover:bg-opacity-90 transition-all text-center flex items-center justify-center group"
                             >
-                                Free Consultation
+                                View Projects <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                             </Link>
                             <Link
-                                to="/projects"
-                                className="border-2 border-white text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-primary transition-all text-center"
+                                to="/contact"
+                                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-sm font-bold text-lg hover:bg-white hover:text-primary transition-all text-center"
                             >
-                                View Experience
+                                Request Consultation
                             </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Trust Badges Strip */}
-            <section className="bg-white py-12 border-b border-gray-100">
+            {/* Government Credentials Strip */}
+            <section className="bg-primary border-t border-gray-800 py-6 overflow-hidden">
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {[
-                            { icon: ShieldCheck, title: "Govt Certified", desc: "Registered Class-A Contractors" },
-                            { icon: HardHat, title: "Skilled Engineers", desc: "Technical expertise on-site" },
-                            { icon: Clock, title: "On-Time Completion", desc: "Strict adherence to timelines" },
-                            { icon: Users, title: "Transparent Dealings", desc: "No hidden costs, clear agreements" },
-                        ].map((item, index) => (
-                            <div key={index} className="flex flex-col items-center text-center p-4 hover:shadow-lg rounded-lg transition-shadow bg-gray-50 md:bg-transparent">
-                                <item.icon className="text-secondary mb-3" size={40} />
-                                <h3 className="font-bold text-lg text-primary">{item.title}</h3>
-                                <p className="text-sm text-gray-500">{item.desc}</p>
+                    <div className="flex flex-wrap md:flex-nowrap justify-between items-center gap-6">
+                        <div className="flex-1 min-w-[200px] flex items-center justify-center md:justify-start border-r border-gray-800 pr-6">
+                            <ShieldCheck className="text-secondary mr-3 flex-shrink-0" size={32} />
+                            <div>
+                                <p className="text-white font-bold leading-tight">Class 2 Contractor</p>
+                                <p className="text-gray-400 text-sm">Andhra Pradesh</p>
                             </div>
-                        ))}
+                        </div>
+                        <div className="flex-1 min-w-[200px] flex items-center justify-center md:justify-center border-r-0 md:border-r border-gray-800 px-6">
+                            <ShieldCheck className="text-secondary mr-3 flex-shrink-0" size={32} />
+                            <div>
+                                <p className="text-white font-bold leading-tight">Class 3 Contractor</p>
+                                <p className="text-gray-400 text-sm">Telangana</p>
+                            </div>
+                        </div>
+                        <div className="flex-1 min-w-[200px] flex items-center justify-center md:justify-center border-r-0 md:border-r border-gray-800 px-6">
+                            <TrendingUp className="text-secondary mr-3 flex-shrink-0" size={32} />
+                            <div>
+                                <p className="text-white font-bold leading-tight">Bidding Capacity</p>
+                                <p className="text-gray-400 text-sm">Up To ₹4 Crores</p>
+                            </div>
+                        </div>
+                        <div className="flex-1 min-w-[200px] flex items-center justify-center md:justify-end pl-6">
+                            <Building2 className="text-secondary mr-3 flex-shrink-0" size={32} />
+                            <div>
+                                <p className="text-white font-bold leading-tight">10+ Years</p>
+                                <p className="text-gray-400 text-sm">Field Experience</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Services Section */}
-            <section className="py-20 bg-light">
+            {/* About Preview Section */}
+            <section className="py-24 bg-white relative">
                 <div className="container mx-auto px-4">
-                    <SectionTitle
-                        title="Our Construction Services"
-                        subtitle="WHAT WE OFFER"
-                    />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {servicesData.map((service) => (
-                            <ServiceCard key={service.id} service={service} />
-                        ))}
-                    </div>
-                    <div className="text-center mt-12">
-                        <Link
-                            to="/services"
-                            className="inline-flex items-center text-primary font-bold hover:text-secondary transition-colors border-b-2 border-secondary pb-1"
-                        >
-                            View All Services Details <ArrowRight className="ml-2" size={18} />
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Why Choose Us */}
-            <section className="py-20 bg-white overflow-hidden">
-                <div className="container mx-auto px-4">
-                    <div className="flex flex-col lg:flex-row items-center gap-12">
+                    <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="lg:w-1/2">
                             <SectionTitle
-                                title="Why Choose Sadiq Infra?"
-                                subtitle="THE DIFFERENCE"
+                                title="Trusted For Public & Private Works"
+                                subtitle="CORPORATE PROFILE"
                                 center={false}
                             />
-                            <div className="space-y-6">
-                                {[
-                                    "Government-grade quality control methodology applied to private projects.",
-                                    "Direct supervision by experienced civil engineers, not just mistris.",
-                                    "Use of laboratory-tested concrete mixes and branded steel.",
-                                    "Detailed estimation transparency - pay for what you actually get.",
-                                    "Weekly progress reports with photos sent to client WhatsApp."
-                                ].map((point, index) => (
-                                    <div key={index} className="flex items-start">
-                                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
-                                            <ShieldCheck size={14} className="text-green-600" />
-                                        </div>
-                                        <p className="ml-4 text-gray-700">{point}</p>
-                                    </div>
-                                ))}
-                            </div>
+                            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+                                Sadiq Infra is a government-registered civil contracting firm with over a decade of hands-on infrastructure execution. Beginning as a subcontractor under reputed organizations such as IJM and NCC Limited, the firm has grown into a multi-state infrastructure contractor.
+                            </p>
+                            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                                We handle roads, irrigation systems, drainage networks, water supply lines, structural repairs, and affordable housing projects with strict adherence to government compliance and engineering standards.
+                            </p>
+                            <Link
+                                to="/about"
+                                className="inline-flex items-center text-primary font-bold hover:text-secondary transition-colors border-b-2 border-secondary pb-1 uppercase tracking-wide text-sm"
+                            >
+                                Learn more about us <ArrowRight className="ml-2" size={16} />
+                            </Link>
                         </div>
-                        <div className="lg:w-1/2 relative">
-                            <div className="absolute -z-10 top-0 right-0 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div>
+                        <div className="lg:w-1/2 relative w-full">
+                            <div className="absolute -z-10 top-8 -right-8 w-full h-full bg-light border border-gray-200"></div>
                             <img
-                                src="/images/about-engineer.jpg"
-                                alt="Engineer Planning"
-                                className="rounded-lg shadow-2xl w-full object-cover h-[500px]"
+                                src="/images/about-site-supervision.jpg"
+                                alt="Site Supervision"
+                                className="w-full h-auto object-cover shadow-xl"
                                 loading="lazy"
                             />
-                            <div className="absolute -bottom-6 -left-6 bg-primary p-6 rounded-lg shadow-xl hidden md:block max-w-xs">
-                                <p className="text-white font-heading font-bold text-xl mb-2">
-                                    "Quality is not an act, it is a habit."
-                                </p>
-                                <p className="text-secondary text-sm">
-                                    - Our Core Philosophy
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Process Steps */}
-            <section className="py-20 bg-gray-900 text-white">
+            {/* Core Capabilities */}
+            <section className="py-24 bg-light">
                 <div className="container mx-auto px-4">
                     <SectionTitle
-                        title="Our Working Process"
-                        subtitle="HOW WE BUILD"
-                        light={true}
+                        title="Our Core Capabilities"
+                        subtitle="AREAS OF EXPERTISE"
                     />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <ProcessStep number="01" title="Site Visit & Plan" description="We survey your plot and create a customized floor plan." />
-                        <ProcessStep number="02" title="Estimation" description="Detailed cost breakdown and transparency agreement." />
-                        <ProcessStep number="03" title="Construction" description="Execution with quality checks at every plinth level." />
-                        <ProcessStep number="04" title="Handover" description="Final finishing and key handover on promised date." />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12 mt-12 w-full max-w-6xl mx-auto">
+                        {/* Civil */}
+                        <div className="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow group">
+                            <img src="/images/capability-civil.jpg" alt="Civil Works" className="w-full h-48 object-cover mb-6 grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <h3 className="text-2xl font-bold font-heading text-primary mb-3">Civil & Structural Works</h3>
+                            <p className="text-gray-600 mb-4 leading-relaxed">CC Roads, RCC Culverts, Structural Repairs, Waterproofing & Concrete Rehabilitation.</p>
+                        </div>
+                        {/* Water */}
+                        <div className="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow group">
+                            <img src="/images/capability-sewerage.jpg" alt="Water Infrastructure" className="w-full h-48 object-cover mb-6 grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <h3 className="text-2xl font-bold font-heading text-primary mb-3">Water & Sewerage Infrastructure</h3>
+                            <p className="text-gray-600 mb-4 leading-relaxed">HDPE & DI Pipeline Installation, Deep Excavation (6–9 meters), Sewerage Systems, Leak Rectification.</p>
+                        </div>
+                        {/* Irrigation */}
+                        <div className="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow group">
+                            <img src="/images/capability-irrigation.jpg" alt="Irrigation Works" className="w-full h-48 object-cover mb-6 grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <h3 className="text-2xl font-bold font-heading text-primary mb-3">Irrigation & Canal Development</h3>
+                            <p className="text-gray-600 mb-4 leading-relaxed">Canal Desilting, Weed Removal, Lock Gate Repairs, Shutter Maintenance, Water Regulation Works.</p>
+                        </div>
+                        {/* Land */}
+                        <div className="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow group">
+                            <img src="/images/capability-landdev.jpg" alt="Land Development" className="w-full h-48 object-cover mb-6 grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            <h3 className="text-2xl font-bold font-heading text-primary mb-3">Land Development & Site Preparation</h3>
+                            <p className="text-gray-600 mb-4 leading-relaxed">Jungle Clearance, Mechanical Tilling, Gravel Filling, Deep Earthwork & Site Levelling.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Featured Projects */}
-            <section className="py-20 bg-light">
+            <section className="py-24 bg-primary">
                 <div className="container mx-auto px-4">
                     <SectionTitle
-                        title="Featured Projects"
-                        subtitle="RECENT WORKS"
+                        title="Featured Major Projects"
+                        subtitle="EXECUTION PORTFOLIO"
+                        light={true}
                     />
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {projectsData.slice(0, 3).map((project) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                        {projectsData.slice(0, 4).map((project) => (
                             <ProjectCard key={project.id} project={project} />
                         ))}
                     </div>
-                    <div className="text-center mt-12">
+                    <div className="text-center mt-16">
                         <Link
                             to="/projects"
-                            className="bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors inline-block"
+                            className="inline-flex items-center text-secondary font-bold hover:text-white transition-colors border-b-2 border-secondary pb-1 uppercase tracking-wide text-sm"
                         >
-                            View Full Gallery
+                            View All Projects <ArrowRight className="ml-2" size={16} />
                         </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Execution Process */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-4">
+                    <SectionTitle
+                        title="Standardized Execution Process"
+                        subtitle="HOW WE OPERATE"
+                    />
+                    <div className="max-w-5xl mx-auto mt-16">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                            <div className="flex flex-col items-center text-center group">
+                                <div className="w-20 h-20 bg-light rounded-full flex items-center justify-center border-2 border-primary mb-4 group-hover:bg-secondary group-hover:border-secondary transition-colors">
+                                    <FileText className="text-primary" size={32} />
+                                </div>
+                                <h4 className="font-bold text-primary font-heading uppercase text-sm mb-2">Technical Planning</h4>
+                                <p className="text-gray-500 text-xs text-center border-t border-gray-200 pt-2">Tender & Estimation</p>
+                            </div>
+                            <div className="flex flex-col items-center text-center group">
+                                <div className="w-20 h-20 bg-light rounded-full flex items-center justify-center border-2 border-primary mb-4 group-hover:bg-secondary group-hover:border-secondary transition-colors">
+                                    <Tractor className="text-primary" size={32} />
+                                </div>
+                                <h4 className="font-bold text-primary font-heading uppercase text-sm mb-2">Resource Mob</h4>
+                                <p className="text-gray-500 text-xs text-center border-t border-gray-200 pt-2">Machinery & Labor</p>
+                            </div>
+                            <div className="flex flex-col items-center text-center group">
+                                <div className="w-20 h-20 bg-light rounded-full flex items-center justify-center border-2 border-primary mb-4 group-hover:bg-secondary group-hover:border-secondary transition-colors">
+                                    <Hammer className="text-primary" size={32} />
+                                </div>
+                                <h4 className="font-bold text-primary font-heading uppercase text-sm mb-2">Site Execution</h4>
+                                <p className="text-gray-500 text-xs text-center border-t border-gray-200 pt-2">Supervision & Execution</p>
+                            </div>
+                            <div className="flex flex-col items-center text-center group">
+                                <div className="w-20 h-20 bg-light rounded-full flex items-center justify-center border-2 border-primary mb-4 group-hover:bg-secondary group-hover:border-secondary transition-colors">
+                                    <CheckSquare className="text-primary" size={32} />
+                                </div>
+                                <h4 className="font-bold text-primary font-heading uppercase text-sm mb-2">Compliance</h4>
+                                <p className="text-gray-500 text-xs text-center border-t border-gray-200 pt-2">Quality Monitoring</p>
+                            </div>
+                            <div className="flex flex-col items-center text-center group">
+                                <div className="w-20 h-20 bg-light rounded-full flex items-center justify-center border-2 border-primary mb-4 group-hover:bg-secondary group-hover:border-secondary transition-colors">
+                                    <CheckCircle className="text-primary" size={32} />
+                                </div>
+                                <h4 className="font-bold text-primary font-heading uppercase text-sm mb-2">Handover</h4>
+                                <p className="text-gray-500 text-xs text-center border-t border-gray-200 pt-2">Timely Completion</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

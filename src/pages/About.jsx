@@ -4,23 +4,25 @@ import StatsCounter from '../components/StatsCounter';
 import Breadcrumbs from '../components/Breadcrumbs';
 import CTASection from '../components/CTASection';
 import MetaWrapper from '../components/MetaWrapper';
-import { Target, Award, Users } from 'lucide-react';
+import { Target, Award, Shield, FileCheck } from 'lucide-react';
 
 const About = () => {
     return (
         <div className="flex flex-col">
             <MetaWrapper
-                title="About Us | Experienced Civil Engineers & Contractors"
-                description="Since 2010, Sadiq Infra has been delivering quality construction in Guntur & AP. Learn about our journey from government projects to private villas."
+                title="About Sadiq Infra | Government Registered Contactors"
+                description="Since 2012, Sadiq Infra is a trusted infrastructure contractor executing large-scale government projects across AP & Telangana."
             />
 
             {/* Page Header */}
-            <div className="bg-primary text-white py-16 text-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('/images/about-site-work.jpg')] bg-cover bg-center"></div>
+            <div className="bg-primary text-white py-20 text-center relative overflow-hidden">
+                <div className="absolute inset-0 opacity-20 bg-[url('/images/capability-civil.jpg')] bg-cover bg-center"></div>
                 <div className="container mx-auto px-4 relative z-10">
-                    <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 hero-heading">About Us</h1>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto hero-subtext">
-                        From government contracts to premium private construction.
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-4 hero-heading uppercase tracking-wide">
+                        About Sadiq Infra
+                    </h1>
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto font-light hero-subtext">
+                        Delivering Multi-Crore Infrastructure Execution.
                     </p>
                 </div>
             </div>
@@ -28,33 +30,41 @@ const About = () => {
             <Breadcrumbs />
 
             {/* Intro Story */}
-            <section className="py-20 bg-white">
+            <section className="py-24 bg-white">
                 <div className="container mx-auto px-4">
-                    <div className="flex flex-col lg:flex-row gap-12 items-center">
+                    <div className="flex flex-col lg:flex-row gap-16 items-start">
                         <div className="lg:w-1/2">
-                            <img
-                                src="/images/about-engineer.jpg"
-                                alt="Our Team"
-                                className="rounded-lg shadow-xl w-full"
-                                loading="lazy"
-                            />
+                            <div className="relative p-4 border border-gray-200 bg-light">
+                                <img
+                                    src="/images/about-site-supervision.jpg"
+                                    alt="Site Supervision"
+                                    className="w-full grayscale hover:grayscale-0 transition-all duration-700"
+                                    loading="lazy"
+                                />
+                                <div className="absolute -bottom-6 -right-6 bg-secondary text-primary p-6 shadow-lg max-w-[200px] border border-primary">
+                                    <p className="font-heading font-extrabold text-4xl mb-1">10+</p>
+                                    <p className="font-bold text-sm uppercase">Years of Field Leadership</p>
+                                </div>
+                            </div>
                         </div>
                         <div className="lg:w-1/2">
                             <SectionTitle
-                                title="Building With Integrity Since 2010"
-                                subtitle="OUR STORY"
+                                title="Building National Infrastructure Since 2012"
+                                subtitle="FIRM HISTORY"
                                 center={false}
                             />
-                            <p className="text-gray-600 mb-6 leading-relaxed">
-                                Sadiq Infra started as a specialized contractor for challenging government infrastructure projects, including bridges, drainage systems, and certified roads in Andhra Pradesh.
-                            </p>
-                            <p className="text-gray-600 mb-6 leading-relaxed">
-                                Over the last decade, we have earned a reputation for <strong>uncompromising quality</strong> and <strong>engineering precision</strong>. Recognizing the lack of professional grade construction in the private sector, we expanded our services to help individual home owners build their dream properties with the same rigor used in public infrastructure.
-                            </p>
-                            <div className="bg-light p-6 rounded-l border-l-4 border-secondary">
-                                <p className="text-primary font-bold italic">
-                                    "We don't just build houses; we engineer homes that last generations."
+                            <div className="space-y-6 text-gray-700 text-lg font-light leading-relaxed">
+                                <p>
+                                    Sadiq Infra was founded by Shaik Jani, an experienced civil contractor active in infrastructure development since 2012. Beginning his journey as a subcontractor for nationally recognized firms, he gained practical experience in national highways, railway infrastructure, and urban waterworks.
                                 </p>
+                                <p>
+                                    Through consistent performance and successful execution of complex government projects, the firm upgraded its contractor classification and expanded operations across Andhra Pradesh and Telangana.
+                                </p>
+                                <div className="border-l-4 border-secondary pl-6 py-2 bg-light">
+                                    <p className="text-primary font-semibold italic text-base">
+                                        Today, Sadiq Infra stands as a trusted infrastructure contractor delivering government-grade quality standards to every project we undertake, bridging the gap between public scale and private precision.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -62,46 +72,59 @@ const About = () => {
             </section>
 
             {/* Stats Section */}
-            <section className="py-16 bg-primary text-white">
+            <section className="py-20 bg-primary text-white border-y border-gray-800">
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-700">
-                        <StatsCounter end={12} suffix="+" label="Years Experience" />
-                        <StatsCounter end={50} suffix="+" label="Projects Completed" />
-                        <StatsCounter end={150} suffix="+" label="Skilled Workers" />
-                        <StatsCounter end={100} suffix="%" label="Client Satisfaction" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-700">
+                        <div className="flex flex-col items-center justify-center p-6 text-center">
+                            <p className="text-5xl font-heading font-extrabold text-secondary mb-2">33+</p>
+                            <p className="text-gray-300 font-medium uppercase tracking-wider text-sm">Government Projects</p>
+                        </div>
+                        <div className="flex flex-col items-center justify-center p-6 text-center">
+                            <p className="text-5xl font-heading font-extrabold text-white mb-2">₹5+ Cr</p>
+                            <p className="text-gray-300 font-medium uppercase tracking-wider text-sm">Largest Project</p>
+                        </div>
+                        <div className="flex flex-col items-center justify-center p-6 text-center">
+                            <p className="text-5xl font-heading font-extrabold text-secondary mb-2">10+</p>
+                            <p className="text-gray-300 font-medium uppercase tracking-wider text-sm">Years Experience</p>
+                        </div>
+                        <div className="flex flex-col items-center justify-center p-6 text-center">
+                            <p className="text-5xl font-heading font-extrabold text-white mb-2">2</p>
+                            <p className="text-gray-300 font-medium uppercase tracking-wider text-sm">Operational States</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Mission & Vision */}
-            <section className="py-20 bg-light">
+            {/* Values */}
+            <section className="py-24 bg-light">
                 <div className="container mx-auto px-4">
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <h2 className="text-3xl font-heading font-extrabold text-primary mb-4">Core Operating Principles</h2>
+                        <p className="text-gray-600">The pillars that sustain our firm's reputation in public infrastructure.</p>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
-                            <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <Target size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold font-heading mb-4 text-primary">Our Mission</h3>
-                            <p className="text-gray-600">
-                                To bring professional engineering standards to individual home construction and deliver projects on time, every time.
+                        <div className="bg-white p-10 border border-gray-200">
+                            <Shield className="text-secondary w-12 h-12 mb-6" strokeWidth={1.5} />
+                            <h3 className="text-xl font-bold font-heading mb-4 text-primary">Compliance First</h3>
+                            <p className="text-gray-600 font-light">
+                                Strict adherence to Central and State PWD codes, safety protocols, and labor laws on every site.
                             </p>
                         </div>
-                        <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
-                            <div className="w-16 h-16 bg-secondary/20 text-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                                <Award size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold font-heading mb-4 text-primary">Our Quality</h3>
-                            <p className="text-gray-600">
-                                We use only branded materials (UltraTech, Tata Steel) and adhere to strict structural safety codes tailored for AP soil conditions.
+
+                        <div className="bg-white p-10 border border-t-4 border-t-secondary border-gray-200 transform md:-translate-y-4 shadow-lg">
+                            <Award className="text-primary w-12 h-12 mb-6" strokeWidth={1.5} />
+                            <h3 className="text-xl font-bold font-heading mb-4 text-primary">Execution Quality</h3>
+                            <p className="text-gray-600 font-light">
+                                Multi-level quality checks for materials, mixture ratios, and structural tolerances to ensure legacy-level durability.
                             </p>
                         </div>
-                        <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
-                            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <Users size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold font-heading mb-4 text-primary">Our Team</h3>
-                            <p className="text-gray-600">
-                                A dedicated workforce of civil engineers, supervisors, and skilled masons who have been with us for years.
+
+                        <div className="bg-white p-10 border border-gray-200">
+                            <FileCheck className="text-secondary w-12 h-12 mb-6" strokeWidth={1.5} />
+                            <h3 className="text-xl font-bold font-heading mb-4 text-primary">Tender Integrity</h3>
+                            <p className="text-gray-600 font-light">
+                                Transparent billing, precise estimation, and ethical operational practices from mobilization to handover.
                             </p>
                         </div>
                     </div>
