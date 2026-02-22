@@ -1,74 +1,43 @@
 export const projectsData = [
-    {
-        id: 1,
-        title: "Amaravathi Water Sewage System",
-        category: "Water Supply",
-        location: "Amaravathi, Andhra Pradesh",
-        year: "2019–2024",
-        tenderId: "Government Contract",
-        contractValue: "₹5,37,79,500",
-        status: "Ongoing",
-        description: "Deep excavation up to 9 meters and installation of large-diameter DI and RCC pipelines.",
-        image: "/images/project-amaravathi-sewage.jpg"
-    },
-    {
-        id: 2,
-        title: "243 Government Affordable Houses",
-        category: "Housing",
-        location: "Andhra Pradesh",
-        year: "2021",
-        tenderId: "State Housing Dept",
-        contractValue: "Confidential",
-        status: "Completed",
-        description: "Mass construction of 243 affordable housing units ensuring timely delivery and quality.",
-        image: "/images/project-affordable-housing.jpg"
-    },
-    {
-        id: 3,
-        title: "National Highway NH-16 Package",
-        category: "Roads & Drains",
-        location: "Andhra Pradesh",
-        year: "2018",
-        tenderId: "NHAI Package",
-        contractValue: "Confidential",
-        status: "Completed",
-        description: "Critical highway construction and adjoining severe duty drainage infrastructure.",
-        image: "/images/project-nh16.jpg"
-    },
-    {
-        id: 4,
-        title: "Samalkot Canal Restoration",
-        category: "Irrigation & Canal",
-        location: "Samalkot, AP",
-        year: "2022",
-        tenderId: "Irrigation Dept",
-        contractValue: "Confidential",
-        status: "Completed",
-        description: "Wide canal desilting, weed removal, and vital restoration irrigation works.",
-        image: "/images/project-canal-restoration.jpg"
-    },
-    {
-        id: 5,
-        title: "Guntur Inner Ring Road Drains",
-        category: "Roads & Drains",
-        location: "Guntur, AP",
-        year: "2020",
-        tenderId: "GMC",
-        contractValue: "Confidential",
-        status: "Completed",
-        description: "Execution of major CC roads and RCC culverts for urban development.",
-        image: "/images/project-road-01.jpg"
-    },
-    {
-        id: 6,
-        title: "Godavari Pipeline Network",
-        category: "Water Supply",
-        location: "Telangana",
-        year: "2023",
-        tenderId: "Mission Bhagiratha",
-        contractValue: "Confidential",
-        status: "Ongoing",
-        description: "HDPE pipeline installation and pumping main repairs.",
-        image: "/images/project-water-01.jpg"
-    }
+    // ─── 1. Roads & Urban Infrastructure ───
+    { id: 1, title: "CC Road & Drain – Sanjeevaih Nagar", category: "Roads & Urban Infrastructure", location: "Guntur, AP", year: "2022", tenderId: "GMC/R&B", contractValue: "Govt Contract", status: "Completed", description: "Cement concrete road and stormwater drainage system construction.", image: "/images/road-1.jpg" },
+    { id: 2, title: "Drain & RCC Culverts – Fathimapuram", category: "Roads & Urban Infrastructure", location: "Guntur, AP", year: "2021", tenderId: "GMC", contractValue: "Govt Contract", status: "Completed", description: "Storm drain and reinforced cement concrete culvert construction.", image: "/images/road-2.jpg" },
+    { id: 3, title: "CC Drains – Varshitha Apartment Road", category: "Roads & Urban Infrastructure", location: "Guntur, AP", year: "2023", tenderId: "GMC", contractValue: "Govt Contract", status: "Completed", description: "CC drain infrastructure along residential corridor.", image: "/images/road-construction.jpg" },
+    { id: 4, title: "CC Road – Vijayapuri Colony", category: "Roads & Urban Infrastructure", location: "Guntur, AP", year: "2022", tenderId: "GMC", contractValue: "Govt Contract", status: "Completed", description: "Cement concrete road with proper camber and side drains.", image: "/images/hero-construction.jpg" },
+    { id: 5, title: "CC Drains – Kaleswara Rao Rythu Bazar", category: "Roads & Urban Infrastructure", location: "Guntur, AP", year: "2020", tenderId: "GMC/SE", contractValue: "Govt Contract", status: "Completed", description: "CC drain works at commercial marketplace zone.", image: "/images/road-1.jpg" },
+    { id: 6, title: "Banjaranaik Colony Drain", category: "Roads & Urban Infrastructure", location: "Guntur, AP", year: "2021", tenderId: "GMC", contractValue: "Govt Contract", status: "Completed", description: "Colony-level drainage infrastructure works.", image: "/images/road-2.jpg" },
+    { id: 7, title: "Budampadu Drain & Culverts", category: "Roads & Urban Infrastructure", location: "Budampadu, AP", year: "2022", tenderId: "R&B Dept", contractValue: "Govt Contract", status: "Completed", description: "Rural drainage and culvert execution.", image: "/images/road-construction.jpg" },
+    { id: 8, title: "Housing Board Colony CC Drain", category: "Roads & Urban Infrastructure", location: "Guntur, AP", year: "2023", tenderId: "Housing Board", contractValue: "Govt Contract", status: "Completed", description: "Comprehensive CC drain improvement at housing board colony.", image: "/images/structure-1.jpg" },
+
+    // ─── 2. Irrigation & Canal Works ───
+    { id: 9, title: "Samalkot Canal Desilting", category: "Irrigation & Canal Works", location: "Samalkot, AP", year: "2022", tenderId: "Irrigation Dept", contractValue: "Govt Contract", status: "Completed", description: "Wide canal desilting, weed removal, and vital restoration irrigation works.", image: "/images/about-site-work.jpg" },
+    { id: 10, title: "Weed Removal – Y.I Channel", category: "Irrigation & Canal Works", location: "East Godavari, AP", year: "2021", tenderId: "Irrigation Dept", contractValue: "Govt Contract", status: "Completed", description: "Weed clearing operations to improve water flow in irrigation channel.", image: "/images/about-engineer.jpg" },
+    { id: 11, title: "Weed Removal – Samalkota Canal", category: "Irrigation & Canal Works", location: "Samalkota, AP", year: "2022", tenderId: "Irrigation Dept", contractValue: "Govt Contract", status: "Completed", description: "Weed removal to restore canal carrying capacity.", image: "/images/about-site-work.jpg" },
+    { id: 12, title: "Kolluru Lock Gate Repairs", category: "Irrigation & Canal Works", location: "Kolluru, AP", year: "2020", tenderId: "Irrigation Dept", contractValue: "Govt Contract", status: "Completed", description: "Lock chamber gate rehabilitation and shutter maintenance works.", image: "/images/structure-2.jpg" },
+    { id: 13, title: "Kollipara Channel Weed Removal", category: "Irrigation & Canal Works", location: "Kollipara, AP", year: "2021", tenderId: "Irrigation Dept", contractValue: "Govt Contract", status: "Completed", description: "Mechanical and manual weed clearing in irrigation channel.", image: "/images/renovation-work.jpg" },
+    { id: 14, title: "Commamuru Canal Shutter Repairs", category: "Irrigation & Canal Works", location: "Commamuru, AP", year: "2022", tenderId: "Irrigation Dept", contractValue: "Govt Contract", status: "Completed", description: "Shutter installation and repair in canal regulation system.", image: "/images/structure-3.jpg" },
+    { id: 15, title: "Upparakhandi Canal Weed Removal", category: "Irrigation & Canal Works", location: "Upparakhandi, AP", year: "2023", tenderId: "Irrigation Dept", contractValue: "Govt Contract", status: "Completed", description: "Weed removal and flow improvement operations.", image: "/images/about-engineer.jpg" },
+    { id: 16, title: "Nakhalakhandi Drain Desilting", category: "Irrigation & Canal Works", location: "Nakhalakhandi, AP", year: "2022", tenderId: "Irrigation Dept", contractValue: "Govt Contract", status: "Completed", description: "Drain desilting and cross bund formation works.", image: "/images/about-site-work.jpg" },
+
+    // ─── 3. Water Supply & Pipeline Works ───
+    { id: 17, title: "Amaravathi Water Sewage System", category: "Water Supply & Pipeline Works", location: "Amaravathi, AP", year: "2019–2024", tenderId: "Government Contract", contractValue: "₹5,37,79,500", status: "Ongoing", description: "Deep excavation up to 9 meters and installation of large-diameter DI and RCC pipelines.", image: "/images/commercial-building.jpg" },
+    { id: 18, title: "HDPE Pipe Line – Gujjanagundla to Colonies", category: "Water Supply & Pipeline Works", location: "Gujjanagundla, AP", year: "2021", tenderId: "RWS Dept", contractValue: "Govt Contract", status: "Completed", description: "HDPE pipeline installation for rural water supply scheme.", image: "/images/apartment-construction.jpg" },
+    { id: 19, title: "110mm HDPE – Etukuru to Lalpuram", category: "Water Supply & Pipeline Works", location: "Etukuru–Lalpuram, AP", year: "2022", tenderId: "RWS Dept", contractValue: "Govt Contract", status: "Completed", description: "110mm HDPE pipeline laying with proper trench excavation.", image: "/images/structure-1.jpg" },
+    { id: 20, title: "Leak Rectification – 800mm PSC Pumping Main", category: "Water Supply & Pipeline Works", location: "Guntur, AP", year: "2023", tenderId: "Municipal Corp", contractValue: "Govt Contract", status: "Completed", description: "Critical leak detection and rectification in 800mm PSC pumping main pipeline.", image: "/images/structure-2.jpg" },
+    { id: 21, title: "Removal of Sand – 1000 KL Sump", category: "Water Supply & Pipeline Works", location: "Guntur, AP", year: "2022", tenderId: "Municipal Corp", contractValue: "Govt Contract", status: "Completed", description: "Sand removal and sump cleaning to restore water storage capacity.", image: "/images/structure-3.jpg" },
+
+    // ─── 4. Land Development & Mechanical Works ───
+    { id: 22, title: "Mechanical Site Preparation – Badampet", category: "Land Development", location: "Badampet, AP", year: "2021", tenderId: "Revenue Dept", contractValue: "Govt Contract", status: "Completed", description: "Deep earthwork and mechanical tilling for township development.", image: "/images/villa-construction.jpg" },
+    { id: 23, title: "Mechanical Prep – Madharam & Subbanapally", category: "Land Development", location: "Madharam, AP", year: "2022", tenderId: "Revenue Dept", contractValue: "Govt Contract", status: "Completed", description: "Mechanical site preparation and grading for government land development.", image: "/images/house-construction.jpg" },
+    { id: 24, title: "Jungle Clearance – Amaravathi Township", category: "Land Development", location: "Amaravathi, AP", year: "2020", tenderId: "CRDA", contractValue: "Govt Contract", status: "Completed", description: "Large-scale jungle clearance for the Amaravathi capital region development.", image: "/images/about-site-work.jpg" },
+    { id: 25, title: "Gandhi Park Gravel Filling", category: "Land Development", location: "Guntur, AP", year: "2023", tenderId: "GMC", contractValue: "Govt Contract", status: "Completed", description: "Gravel filling and park area levelling.", image: "/images/renovation-work.jpg" },
+
+    // ─── 5. Structural & Specialized Works ───
+    { id: 26, title: "Structural Repairs – B.R Stadium ELSR", category: "Structural & Specialized Works", location: "Guntur, AP", year: "2022", tenderId: "Municipal Corp", contractValue: "Govt Contract", status: "Completed", description: "Complete structural rehabilitation including waterproofing, gunniting, and sand blasting of elevated service reservoir.", image: "/images/structure-1.jpg" },
+    { id: 27, title: "Roof Truss Shed – HLR Sump", category: "Structural & Specialized Works", location: "Guntur, AP", year: "2023", tenderId: "Municipal Corp", contractValue: "Govt Contract", status: "Completed", description: "Structural fabrication and truss shed construction at high-level reservoir sump.", image: "/images/structure-2.jpg" },
+
+    // ─── 6. Government Housing & Supply Works ───
+    { id: 28, title: "Central Govt Affordable Housing (243 Houses)", category: "Govt Housing & Supply", location: "Andhra Pradesh", year: "2021", tenderId: "State Housing Dept", contractValue: "Govt Contract", status: "Completed", description: "Mass construction of 243 affordable housing units under central government scheme.", image: "/images/residential-1.jpg" },
+    { id: 29, title: "Supply of Dumper Placers & Mini Compactors", category: "Govt Housing & Supply", location: "Guntur, AP", year: "2022", tenderId: "GMC", contractValue: "Govt Contract", status: "Completed", description: "Procurement and supply of sanitation and construction machinery.", image: "/images/residential-2.jpg" },
+    { id: 30, title: "Supply of Tyres & Sanitation Equipment", category: "Govt Housing & Supply", location: "Guntur, AP", year: "2023", tenderId: "GMC", contractValue: "Govt Contract", status: "Completed", description: "Supply of municipal sanitation equipment and vehicle tyres.", image: "/images/residential-3.jpg" },
 ];

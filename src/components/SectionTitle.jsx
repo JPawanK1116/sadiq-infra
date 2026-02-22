@@ -1,17 +1,17 @@
 import React from 'react';
 
-const SectionTitle = ({ title, subtitle, center = true, light = false }) => {
+const SectionTitle = ({ title, subtitle, light = false, center = true }) => {
     return (
-        <div className={`mb-12 ${center ? 'text-center' : 'text-left'}`}>
+        <div className={`mb-12 ${center ? 'text-center' : ''}`}>
             {subtitle && (
-                <span className={`text-secondary text-sm font-bold tracking-widest uppercase mb-2 block`}>
+                <p className={`text-sm font-semibold uppercase tracking-[0.25em] mb-3 ${light ? 'text-secondary/80' : 'text-secondary'}`}>
                     {subtitle}
-                </span>
+                </p>
             )}
-            <h2 className={`text-3xl md:text-4xl font-heading font-bold ${light ? 'text-white' : 'text-primary'}`}>
+            <h2 className={`text-3xl md:text-4xl font-heading font-extrabold leading-tight ${light ? 'text-white' : 'text-primary'}`}>
                 {title}
             </h2>
-            <div className={`mt-4 h-1 w-20 bg-secondary rounded ${center ? 'mx-auto' : ''}`}></div>
+            <div className={`mt-4 h-0.5 w-16 bg-secondary ${center ? 'mx-auto' : ''}`}></div>
         </div>
     );
 };

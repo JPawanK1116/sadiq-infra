@@ -2,23 +2,23 @@ import React from 'react';
 
 const PoweredBy = () => {
     return (
-        <div className="bg-gray-900 py-4 border-t border-gray-800">
-            <div className="container mx-auto px-4 flex flex-col items-center justify-center gap-2">
-                <div className="flex items-center gap-2 text-gray-400 text-sm">
-                    <span>Powered By</span>
+        <div className="bg-dark py-3 border-t border-white/5">
+            <div className="container mx-auto px-4 flex flex-col items-center justify-center gap-1.5">
+                <div className="flex items-center gap-2 text-gray-500 text-xs">
+                    <span>Developed by</span>
                     <img
                         src="/images/crawlop-badge.png"
-                        alt="Crawlop"
-                        className="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                        alt="Crawlup"
+                        className="h-5 w-auto opacity-60 hover:opacity-100 transition-opacity"
                     />
                 </div>
                 <a
-                    href="https://crawlop.in"
+                    href="https://crawlup.in/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-secondary hover:text-white transition-colors"
+                    className="text-[10px] text-gray-600 hover:text-secondary transition-colors tracking-wide"
                 >
-                    Need a customer for your business? Visit Crawlop.in
+                    crawlup.in
                 </a>
             </div>
         </div>

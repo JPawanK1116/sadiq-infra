@@ -1,4 +1,4 @@
-import { Building2, Droplets, Waves, Tractor } from 'lucide-react';
+import { Building2, Droplets, Waves, Shovel } from 'lucide-react';
 
 export const servicesData = [
     {
@@ -13,7 +13,7 @@ export const servicesData = [
             "Waterproofing Treatment",
             "Gunniting & Sand Blasting"
         ],
-        image: "/images/service-structural-repair.jpg"
+        image: "/images/road-construction.jpg"
     },
     {
         id: 2,
@@ -27,7 +27,7 @@ export const servicesData = [
             "Leak Detection & Rectification",
             "Pumping Main Repairs"
         ],
-        image: "/images/service-hdpe-installation.jpg"
+        image: "/images/commercial-building.jpg"
     },
     {
         id: 3,
@@ -41,12 +41,12 @@ export const servicesData = [
             "Shutter Installation & Repairs",
             "Cross Bund Formation"
         ],
-        image: "/images/service-weed-removal.jpg"
+        image: "/images/about-site-work.jpg"
     },
     {
         id: 4,
         title: "Land Development",
-        icon: Tractor,
+        icon: Shovel,
         description: "Professional site preparation, levelling, and heavy land development services.",
         benefits: [
             "Jungle Clearance",
@@ -54,6 +54,6 @@ export const servicesData = [
             "Gravel Filling",
             "Earthwork & Levelling"
         ],
-        image: "/images/service-excavation.jpg"
+        image: "/images/villa-construction.jpg"
     }
 ];
