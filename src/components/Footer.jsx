@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, ArrowUpRight, ExternalLink, Globe, Palette, Code2, BarChart3 } from 'lucide-react';
 import { companyConfig } from '../config/company';
 
 const Footer = () => {
@@ -27,19 +27,19 @@ const Footer = () => {
     return (
         <footer className="bg-dark text-white border-t border-white/5">
             {/* Main Footer */}
-            <div className="container mx-auto px-4 md:px-6 pt-20 pb-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div className="container mx-auto px-4 md:px-6 pt-16 md:pt-20 pb-10 md:pb-12">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                     {/* Company */}
-                    <div>
-                        <div className="flex items-center mb-6">
+                    <div className="col-span-2 md:col-span-1">
+                        <div className="flex items-center mb-5">
                             <div className="w-10 h-10 bg-secondary flex items-center justify-center font-heading font-black text-primary text-lg mr-3">S</div>
                             <div>
                                 <h3 className="text-lg font-heading font-bold text-white tracking-wider">SADIK INFRA</h3>
                                 <p className="text-[10px] text-secondary/70 tracking-[0.2em] uppercase">Since 2012</p>
                             </div>
                         </div>
-                        <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                            Government-registered civil contracting firm delivering infrastructure projects across Andhra Pradesh & Telangana since 2012.
+                        <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                            Government-registered civil contracting firm delivering infrastructure projects across AP & Telangana.
                         </p>
                         <div className="flex gap-3">
                             <a href="#" className="w-9 h-9 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all text-gray-400 hover:text-primary" aria-label="Facebook"><Facebook size={16} /></a>
@@ -50,8 +50,8 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-sm font-bold mb-6 text-secondary/80 uppercase tracking-[0.2em]">Navigation</h4>
-                        <ul className="space-y-3">
+                        <h4 className="text-xs md:text-sm font-bold mb-4 md:mb-6 text-secondary/80 uppercase tracking-[0.15em] md:tracking-[0.2em]">Navigation</h4>
+                        <ul className="space-y-2 md:space-y-3">
                             {quickLinks.map((link) => (
                                 <li key={link.name}>
                                     <Link to={link.path} className="text-gray-400 hover:text-secondary transition-colors text-sm flex items-center group">
@@ -63,7 +63,7 @@ const Footer = () => {
                     </div>
 
                     {/* Services */}
-                    <div>
+                    <div className="hidden md:block">
                         <h4 className="text-sm font-bold mb-6 text-secondary/80 uppercase tracking-[0.2em]">Expertise</h4>
                         <ul className="space-y-3">
                             {services.map((service) => (
@@ -76,51 +76,87 @@ const Footer = () => {
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-sm font-bold mb-6 text-secondary/80 uppercase tracking-[0.2em]">Reach Us</h4>
-                        <ul className="space-y-5">
+                        <h4 className="text-xs md:text-sm font-bold mb-4 md:mb-6 text-secondary/80 uppercase tracking-[0.15em] md:tracking-[0.2em]">Reach Us</h4>
+                        <ul className="space-y-3 md:space-y-5">
                             <li className="flex items-start">
-                                <Phone className="text-secondary mt-0.5 mr-3 flex-shrink-0" size={16} />
-                                <a href={`tel:${companyConfig.phone.replace(/\s+/g, '')}`} className="text-gray-300 hover:text-white transition-colors text-sm">{companyConfig.phone}</a>
+                                <Phone className="text-secondary mt-0.5 mr-2 md:mr-3 flex-shrink-0" size={14} />
+                                <a href={`tel:${companyConfig.phone.replace(/\s+/g, '')}`} className="text-gray-300 hover:text-white transition-colors text-xs md:text-sm">{companyConfig.phone}</a>
                             </li>
                             <li className="flex items-start">
-                                <Mail className="text-secondary mt-0.5 mr-3 flex-shrink-0" size={16} />
-                                <a href={`mailto:${companyConfig.email}`} className="text-gray-300 hover:text-white transition-colors text-sm">{companyConfig.email}</a>
+                                <Mail className="text-secondary mt-0.5 mr-2 md:mr-3 flex-shrink-0" size={14} />
+                                <a href={`mailto:${companyConfig.email}`} className="text-gray-300 hover:text-white transition-colors text-xs md:text-sm break-all">{companyConfig.email}</a>
                             </li>
                             <li className="flex items-start">
-                                <MapPin className="text-secondary mt-0.5 mr-3 flex-shrink-0" size={16} />
-                                <span className="text-gray-400 text-sm">{companyConfig.address}</span>
+                                <MapPin className="text-secondary mt-0.5 mr-2 md:mr-3 flex-shrink-0" size={14} />
+                                <span className="text-gray-400 text-xs md:text-sm">{companyConfig.address}</span>
                             </li>
                             <li className="flex items-start">
-                                <Clock className="text-secondary mt-0.5 mr-3 flex-shrink-0" size={16} />
-                                <span className="text-gray-400 text-sm">24/7 Project Support</span>
+                                <Clock className="text-secondary mt-0.5 mr-2 md:mr-3 flex-shrink-0" size={14} />
+                                <span className="text-gray-400 text-xs md:text-sm">24/7 Project Support</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            {/* Crawlup Promotion Banner */}
-            <div className="border-t border-white/5 bg-gradient-to-r from-accent via-primary to-accent">
-                <div className="container mx-auto px-4 md:px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-600 text-xs tracking-wide">
+            {/* ─── Crawlup Promotion Section (Centered) ─── */}
+            <div className="border-t border-white/5 bg-gradient-to-r from-primary via-accent to-primary">
+                <div className="container mx-auto px-4 md:px-6 py-6 md:py-8">
+                    <div className="flex flex-col items-center text-center">
+                        {/* Crawlup Logo & Branding */}
+                        <a
+                            href="https://crawlup.in/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex flex-col items-center gap-3 mb-4"
+                        >
+                            <img
+                                src="/images/crawlop-badge.png"
+                                alt="Crawlup"
+                                className="h-8 md:h-10 w-auto opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105"
+                            />
+                            <div className="flex flex-col items-center">
+                                <span className="text-[10px] text-gray-500 uppercase tracking-widest mb-0.5">Designed & Developed by</span>
+                                <span className="text-secondary font-heading font-bold text-base md:text-lg tracking-wide group-hover:text-white transition-colors">
+                                    Crawlup <ExternalLink size={12} className="inline ml-1 opacity-40" />
+                                </span>
+                            </div>
+                        </a>
+
+                        {/* What Crawlup offers */}
+                        <div className="flex flex-wrap justify-center gap-3 md:gap-5 mt-2">
+                            {[
+                                { icon: Globe, label: 'Websites' },
+                                { icon: Palette, label: 'Branding' },
+                                { icon: Code2, label: 'Web Apps' },
+                                { icon: BarChart3, label: 'Digital Growth' },
+                            ].map((item, i) => (
+                                <a
+                                    key={i}
+                                    href="https://crawlup.in/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-1.5 text-gray-500 hover:text-secondary transition-colors"
+                                >
+                                    <item.icon size={12} />
+                                    <span className="text-[10px] md:text-[11px] font-medium uppercase tracking-wider">{item.label}</span>
+                                </a>
+                            ))}
+                        </div>
+
+                        <p className="text-gray-700 text-[10px] mt-4 tracking-wide">
+                            Need a premium website for your business? Visit <a href="https://crawlup.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors font-semibold underline">crawlup.in</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Copyright */}
+            <div className="border-t border-white/5">
+                <div className="container mx-auto px-4 py-4 text-center">
+                    <p className="text-gray-700 text-[10px] tracking-wide">
                         &copy; {currentYear} {companyConfig.name}. All rights reserved.
                     </p>
-
-                    {/* Crawlup Highlight */}
-                    <a
-                        href="https://crawlup.in/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center gap-3 bg-white/5 border border-white/10 hover:border-secondary/50 px-5 py-2.5 transition-all hover:bg-white/10"
-                    >
-                        <img src="/images/crawlop-badge.png" alt="Crawlup" className="h-6 w-6 opacity-70 group-hover:opacity-100 transition-opacity" />
-                        <div className="flex flex-col">
-                            <span className="text-[10px] text-gray-500 uppercase tracking-wider">Designed & Developed by</span>
-                            <span className="text-secondary font-heading font-bold text-sm tracking-wide group-hover:text-white transition-colors">
-                                Crawlup <ExternalLink size={10} className="inline ml-1 opacity-50" />
-                            </span>
-                        </div>
-                    </a>
                 </div>
             </div>
         </footer>

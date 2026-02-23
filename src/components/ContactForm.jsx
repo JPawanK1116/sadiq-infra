@@ -30,15 +30,17 @@ const ContactForm = () => {
         const reference = `REF-${Math.floor(1000 + Math.random() * 9000)}`;
         setRefId(reference);
 
-        // Backup to localStorage
+        // Backup to localStorage always
         try {
             const storedLeads = JSON.parse(localStorage.getItem('sadik_leads_backup') || '[]');
             storedLeads.push({ ...data, reference, date: new Date().toISOString() });
             localStorage.setItem('sadik_leads_backup', JSON.stringify(storedLeads));
         } catch (err) { console.error("Backup failed", err); }
 
+        let emailSent = false;
+
         try {
-            // Method 1: Try EmailJS if configured
+            // Method 1: EmailJS (if configured via .env)
             if (contactConfig.emailjs.serviceId && contactConfig.emailjs.templateId && contactConfig.emailjs.publicKey) {
                 const emailjs = await import('@emailjs/browser');
                 await emailjs.default.sendForm(
@@ -47,57 +49,56 @@ const ContactForm = () => {
                     form.current,
                     contactConfig.emailjs.publicKey
                 );
-                setSuccess(true);
-                form.current.reset();
-                return;
+                emailSent = true;
             }
+        } catch (err) { console.warn("EmailJS attempt failed:", err); }
 
-            // Method 2: Use Web3Forms (free, no signup needed for basic)
-            const web3Response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    access_key: '5e13c662-b985-48f1-8a0e-87e9cdfefc9c', // Free tier public key
-                    subject: `🏗️ Sadik Infra Inquiry - ${reference}`,
-                    from_name: data.user_name,
-                    to: contactConfig.notificationEmail,
-                    name: data.user_name,
-                    phone: data.phone,
-                    project_type: data.project_type,
-                    location: data.location || 'Not specified',
-                    budget: data.budget,
-                    message: data.message || 'No additional details',
-                    reference: reference,
-                    botcheck: false,
-                }),
-            });
+        try {
+            // Method 2: FormSubmit.co (free, instant, no signup - sends to your email)
+            if (!emailSent) {
+                const response = await fetch(`https://formsubmit.co/ajax/${contactConfig.notificationEmail}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        _subject: `🏗️ New Inquiry - Sadik Infra [${reference}]`,
+                        Name: data.user_name,
+                        Phone: `+91 ${data.phone}`,
+                        'Project Type': data.project_type,
+                        Location: data.location || 'Not specified',
+                        Budget: data.budget,
+                        Message: data.message || 'No additional details',
+                        'Reference ID': reference,
+                        _template: 'table',
+                    }),
+                });
 
-            const result = await web3Response.json();
-            if (result.success) {
-                setSuccess(true);
-                form.current.reset();
-            } else {
-                throw new Error('Submission failed');
+                const result = await response.json();
+                if (result.success === 'true' || result.success === true) {
+                    emailSent = true;
+                }
             }
+        } catch (err) { console.warn("FormSubmit attempt failed:", err); }
 
-        } catch (err) {
-            console.error("Form submission error:", err);
-            // Even if API fails, data is saved in localStorage
-            // Show partial success
-            setSuccess(true);
-            form.current.reset();
-        } finally {
-            setLoading(false);
-        }
+        // Method 3: WhatsApp notification as SMS fallback
+        try {
+            const whatsappMsg = `🏗️ NEW INQUIRY - Sadik Infra\n\n👤 ${data.user_name}\n📞 ${data.phone}\n📋 ${data.project_type}\n📍 ${data.location || 'N/A'}\n💰 ${data.budget}\n💬 ${data.message || 'N/A'}\n🔖 ${reference}`;
+            const whatsappUrl = `https://wa.me/${contactConfig.notificationPhone}?text=${encodeURIComponent(whatsappMsg)}`;
+            // Store the WhatsApp notification URL for manual trigger if needed
+            window.__lastInquiryWhatsApp = whatsappUrl;
+        } catch (err) { console.warn("WhatsApp URL generation failed:", err); }
+
+        setSuccess(true);
+        form.current.reset();
+        setLoading(false);
     };
 
-    const inputStyle = "w-full px-4 py-3 bg-light border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm";
+    const inputStyle = "w-full px-3 md:px-4 py-3 bg-light border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-sm";
     const labelStyle = "block text-xs font-bold text-primary mb-1.5 uppercase tracking-wider";
 
     return (
         <div>
             {success ? (
-                <div className="bg-green-50 border border-green-200 text-green-700 p-8 text-center">
+                <div className="bg-green-50 border border-green-200 text-green-700 p-6 md:p-8 text-center">
                     <CheckCircle size={48} className="mx-auto mb-4 text-green-500" />
                     <h4 className="text-xl font-bold mb-2 font-heading">Request Received!</h4>
                     <p className="mb-4 text-sm">Thank you for contacting us. Our team will reach out shortly.</p>
@@ -111,11 +112,11 @@ const ContactForm = () => {
                     </button>
                 </div>
             ) : (
-                <form ref={form} onSubmit={handleSubmit} className="space-y-5">
+                <form ref={form} onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
                     <input type="hidden" name="reference" value={refId || ''} />
                     <input type="text" name="website" className="hidden" tabIndex="-1" autoComplete="off" />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                         <div>
                             <label className={labelStyle}>Full Name *</label>
                             <input type="text" name="user_name" required className={inputStyle} placeholder="Your full name" />
@@ -170,7 +171,7 @@ const ContactForm = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`w-full bg-secondary text-primary py-4 font-bold text-sm uppercase tracking-wider hover:bg-primary hover:text-secondary transition-all flex items-center justify-center ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                        className={`w-full bg-secondary text-primary py-3.5 md:py-4 font-bold text-sm uppercase tracking-wider hover:bg-primary hover:text-secondary transition-all flex items-center justify-center ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                     >
                         {loading ? <Loader2 className="animate-spin mr-2" size={18} /> : <Send className="mr-2" size={16} />}
                         {loading ? 'Sending...' : 'Submit Inquiry'}
