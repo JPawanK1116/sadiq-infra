@@ -4,7 +4,7 @@ import { companyConfig } from '../config/company';
 
 const MetaWrapper = ({ title, description, keywords }) => {
     const fullTitle = `${title} | ${companyConfig.name}`;
-    const defaultDescription = "Sadiq Infra is a leading construction company in Guntur, specializing in residential, commercial, and government infrastructure projects.";
+    const defaultDescription = "Sadik Infra is a leading construction company in Guntur, specializing in residential, commercial, and government infrastructure projects.";
     const defaultKeywords = "construction company, Guntur, builders, residential, commercial, roads, infrastructure";
 
     return (

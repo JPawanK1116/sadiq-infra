@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShieldCheck, ArrowRight, Building2, TrendingUp, CheckCircle, FileText, CheckSquare, Wrench, Truck, ChevronDown, Droplets, Waves, Shovel } from 'lucide-react';
@@ -15,11 +15,11 @@ const Home = () => {
     return (
         <div className="flex flex-col bg-white">
             <MetaWrapper
-                title="Sadiq Infra | Official Infrastructure & Civil Engineering"
+                title="Sadik Infra | Official Infrastructure & Civil Engineering"
                 description="Government-Approved Infrastructure Contractors Since 2012. Civil, Irrigation, Sewerage & Urban Development across AP & Telangana."
             />
 
-            {/* ── HERO ── */}
+            {/* â”€â”€ HERO â”€â”€ */}
             <section className="relative min-h-screen flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img src="/images/hero-construction.jpg" alt="Infrastructure" className="w-full h-full object-cover" loading="eager" />
@@ -59,14 +59,14 @@ const Home = () => {
                 </motion.div>
             </section>
 
-            {/* ── CREDENTIALS ── */}
+            {/* â”€â”€ CREDENTIALS â”€â”€ */}
             <section className="bg-accent py-8 border-b border-white/5">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {[
                             { icon: ShieldCheck, label: 'Class 2 Contractor', sub: 'Andhra Pradesh' },
                             { icon: ShieldCheck, label: 'Class 3 Contractor', sub: 'Telangana' },
-                            { icon: TrendingUp, label: 'Bidding Capacity', sub: 'Up To ₹4 Crores' },
+                            { icon: TrendingUp, label: 'Bidding Capacity', sub: 'Up To â‚¹4 Crores' },
                             { icon: Building2, label: '33+ Projects', sub: '10+ Years Experience' },
                         ].map((item, i) => (
                             <div key={i} className="flex items-center justify-center gap-3 py-3">
@@ -81,17 +81,17 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ── ABOUT PREVIEW ── */}
+            {/* â”€â”€ ABOUT PREVIEW â”€â”€ */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4">
                     <motion.div className="flex flex-col lg:flex-row gap-16 items-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger}>
                         <motion.div className="lg:w-1/2" variants={fadeUp}>
                             <p className="text-secondary font-semibold text-sm uppercase tracking-[0.2em] mb-3">Corporate Profile</p>
                             <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-primary mb-6 leading-tight">
-                                Trusted For <span className="font-display italic text-secondary">Public & Private</span> Works
+                                Trusted For <span className="text-secondary font-extrabold">Public & Private</span> Works
                             </h2>
                             <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-                                Sadiq Infra is a government-registered civil contracting firm with over a decade of hands-on infrastructure execution. Beginning as a subcontractor under reputed organizations such as IJM and NCC Limited, the firm has grown into a multi-state infrastructure contractor.
+                                Sadik Infra is a government-registered civil contracting firm with over a decade of hands-on infrastructure execution. Beginning as a subcontractor under reputed organizations such as IJM and NCC Limited, the firm has grown into a multi-state infrastructure contractor.
                             </p>
                             <p className="text-gray-600 mb-8 text-lg leading-relaxed">
                                 We handle roads, irrigation systems, drainage networks, water supply lines, structural repairs, and affordable housing projects with strict adherence to government compliance and engineering standards.
@@ -111,7 +111,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ── CORE CAPABILITIES ── */}
+            {/* â”€â”€ CORE CAPABILITIES â”€â”€ */}
             <section className="py-24 bg-light">
                 <div className="container mx-auto px-4">
                     <SectionTitle title="Core Capabilities" subtitle="AREAS OF EXPERTISE" />
@@ -142,7 +142,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ── FEATURED PROJECTS ── */}
+            {/* â”€â”€ FEATURED PROJECTS â”€â”€ */}
             <section className="py-24 bg-primary">
                 <div className="container mx-auto px-4">
                     <SectionTitle title="Featured Projects" subtitle="EXECUTION PORTFOLIO" light={true} />
@@ -161,31 +161,42 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ── PROCESS ── */}
-            <section className="py-24 bg-white">
+            {/* â”€â”€ PROCESS â”€â”€ */}
+            <section className="py-24 bg-gradient-to-br from-primary via-accent to-primary overflow-hidden">
                 <div className="container mx-auto px-4">
-                    <SectionTitle title="Standardized Execution" subtitle="HOW WE OPERATE" />
-                    <motion.div className="max-w-5xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-5 gap-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+                    <SectionTitle title="Standardized Execution" subtitle="HOW WE OPERATE" light={true} />
+                    <motion.div className="max-w-6xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-5 gap-6" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
                         {[
-                            { icon: FileText, title: 'Tender Planning', sub: 'Estimation & BOQ' },
-                            { icon: Truck, title: 'Resource Mob.', sub: 'Machinery & Labor' },
-                            { icon: Wrench, title: 'Site Execution', sub: 'Supervision' },
-                            { icon: CheckSquare, title: 'Compliance', sub: 'Quality Control' },
-                            { icon: CheckCircle, title: 'Handover', sub: 'Timely Delivery' },
+                            { icon: FileText, title: 'Tender Planning', sub: 'Estimation & BOQ', color: 'from-amber-500 to-amber-600' },
+                            { icon: Truck, title: 'Resource Mob.', sub: 'Machinery & Labor', color: 'from-blue-500 to-blue-600' },
+                            { icon: Wrench, title: 'Site Execution', sub: 'On-ground Delivery', color: 'from-emerald-500 to-emerald-600' },
+                            { icon: CheckSquare, title: 'Compliance', sub: 'Quality Control', color: 'from-violet-500 to-violet-600' },
+                            { icon: CheckCircle, title: 'Handover', sub: 'Timely Completion', color: 'from-rose-500 to-rose-600' },
                         ].map((step, i) => (
-                            <motion.div key={i} className="flex flex-col items-center text-center group cursor-default" variants={fadeUp}>
-                                <div className="w-20 h-20 bg-light flex items-center justify-center border-2 border-primary mb-4 group-hover:bg-secondary group-hover:border-secondary transition-all duration-500">
-                                    <step.icon className="text-primary group-hover:text-primary" size={28} />
+                            <motion.div
+                                key={i}
+                                className="relative flex flex-col items-center text-center group"
+                                variants={fadeUp}
+                                whileHover={{ scale: 1.08, y: -8 }}
+                                transition={{ type: 'spring', stiffness: 300 }}
+                            >
+                                {/* Step number */}
+                                <span className="absolute -top-3 -right-1 text-[64px] font-heading font-black text-white/5 leading-none select-none">0{i + 1}</span>
+                                {/* Icon circle */}
+                                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-5 shadow-lg shadow-black/20 group-hover:shadow-xl group-hover:shadow-black/30 transition-all duration-500`}>
+                                    <step.icon className="text-white" size={30} strokeWidth={1.8} />
                                 </div>
-                                <h4 className="font-bold text-primary font-heading uppercase text-xs mb-1 tracking-wide">{step.title}</h4>
-                                <p className="text-gray-400 text-xs">{step.sub}</p>
+                                <h4 className="font-bold text-white font-heading uppercase text-xs mb-1 tracking-wider">{step.title}</h4>
+                                <p className="text-gray-400 text-[11px]">{step.sub}</p>
+                                {/* Connector line (hidden on last & mobile) */}
+                                {i < 4 && <div className="hidden md:block absolute top-10 -right-3 w-6 h-px bg-white/10"></div>}
                             </motion.div>
                         ))}
                     </motion.div>
                 </div>
             </section>
 
-            {/* ── CTA ── */}
+            {/* â”€â”€ CTA â”€â”€ */}
             <CTASection />
         </div>
     );

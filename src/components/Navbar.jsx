@@ -51,7 +51,7 @@ const Navbar = () => {
                             </div>
                             <div>
                                 <span className="text-xl font-heading font-bold text-white tracking-wider block leading-tight">
-                                    SADIQ INFRA
+                                    SADIK INFRA
                                 </span>
                                 <span className="text-[10px] text-secondary/80 font-semibold tracking-[0.25em] uppercase block">
                                     Infrastructure & Civil Eng.

@@ -13,8 +13,8 @@ const About = () => {
     return (
         <div className="flex flex-col bg-white">
             <MetaWrapper
-                title="About Sadiq Infra | Government Registered Contractors"
-                description="Since 2012, Sadiq Infra is a trusted infrastructure contractor executing large-scale government projects across AP & Telangana."
+                title="About Sadik Infra | Government Registered Contractors"
+                description="Since 2012, Sadik Infra is a trusted infrastructure contractor executing large-scale government projects across AP & Telangana."
             />
 
             {/* Page Header */}
@@ -23,7 +23,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary"></div>
                 <div className="container mx-auto px-4 relative z-10">
                     <p className="text-secondary text-sm font-semibold uppercase tracking-[0.3em] mb-4">Est. 2012</p>
-                    <h1 className="text-4xl md:text-6xl font-heading font-extrabold mb-4 hero-heading tracking-tight">About Sadiq Infra</h1>
+                    <h1 className="text-4xl md:text-6xl font-heading font-extrabold mb-4 hero-heading tracking-tight">About Sadik Infra</h1>
                     <p className="text-lg text-gray-400 max-w-xl mx-auto font-light hero-subtext">Delivering infrastructure excellence across two states.</p>
                 </div>
             </div>
@@ -48,8 +48,8 @@ const About = () => {
                                 From Subcontractor to <span className="font-display italic text-secondary">Multi-State Contractor</span>
                             </h2>
                             <div className="space-y-6 text-gray-600 text-lg font-light leading-relaxed">
-                                <p>Sadiq Infra was founded by Shaik Jani, an experienced civil contractor active in infrastructure development since 2012. Beginning his journey as a subcontractor for nationally recognized firms like IJM and NCC Limited, he gained practical experience in national highways, railway infrastructure, and urban waterworks.</p>
-                                <p>Today, under the dynamic leadership of <strong className="text-primary">Shaik Sadiq</strong> — Jani's son and the current operations head — the firm has expanded its capabilities and modernized its approach while maintaining the same rigorous standards.</p>
+                                <p>Sadik Infra was founded by Shaik Jani, an experienced civil contractor active in infrastructure development since 2012. Beginning his journey as a subcontractor for nationally recognized firms like IJM and NCC Limited, he gained practical experience in national highways, railway infrastructure, and urban waterworks.</p>
+                                <p>Today, under the dynamic leadership of <strong className="text-primary">Shaik Sadik</strong> — Jani's son and the current operations head — the firm has expanded its capabilities and modernized its approach while maintaining the same rigorous standards.</p>
                                 <p>The firm is operational across <strong className="text-primary">Andhra Pradesh & Telangana</strong>, handling projects valued up to ₹5+ crores with a registered bidding capacity of ₹4 crores.</p>
                             </div>
                         </motion.div>

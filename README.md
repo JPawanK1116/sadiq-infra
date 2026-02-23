@@ -1,6 +1,6 @@
-# Sadiq Infra — Corporate Construction Website
+# Sadik Infra — Corporate Construction Website
 
-A premium corporate website for **Sadiq Infra**, built with React, Vite, and Tailwind CSS.
+A premium corporate website for **Sadik Infra**, built with React, Vite, and Tailwind CSS.
 
 ---
 

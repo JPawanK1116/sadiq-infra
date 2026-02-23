@@ -13,7 +13,7 @@ const Services = () => {
     return (
         <div className="flex flex-col bg-white">
             <MetaWrapper
-                title="Sadiq Infra Services | Civil, Sewerage & Irrigation"
+                title="Sadik Infra Services | Civil, Sewerage & Irrigation"
                 description="Government-approved specialists in CC Roads, Deep Excavation pipelines, Irrigation Canal desilting, and Structural Engineering."
             />
 

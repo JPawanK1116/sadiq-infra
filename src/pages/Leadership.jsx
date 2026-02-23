@@ -22,8 +22,8 @@ const Leadership = () => {
     return (
         <div className="flex flex-col bg-white">
             <MetaWrapper
-                title="Leadership | Shaik Jani & Shaik Sadiq – Sadiq Infra"
-                description="Meet the father-son leadership behind Sadiq Infra's decade of government infrastructure execution."
+                title="Leadership | Shaik Jani & Shaik Sadik – Sadik Infra"
+                description="Meet the father-son leadership behind Sadik Infra's decade of government infrastructure execution."
             />
 
             {/* Header */}
@@ -59,7 +59,7 @@ const Leadership = () => {
                             </h3>
                             <div className="space-y-5 text-gray-600 text-lg font-light leading-relaxed">
                                 <p>With over a decade of hands-on, field-level civil execution experience, Shaik Jani has successfully managed and delivered large-scale infrastructure projects across varied sectors —  from complex sewerage systems and extensive irrigation canals to deep-trench pipeline networks, affordable housing, and structural rehabilitation.</p>
-                                <p>Beginning as a subcontractor with IJM and NCC Limited, he built his expertise from the ground up on national highways, railway infrastructure, and major urban waterworks before founding Sadiq Infra in 2012.</p>
+                                <p>Beginning as a subcontractor with IJM and NCC Limited, he built his expertise from the ground up on national highways, railway infrastructure, and major urban waterworks before founding Sadik Infra in 2012.</p>
                             </div>
 
                             <div className="mt-10 bg-light p-8 border border-gray-100">
@@ -83,15 +83,15 @@ const Leadership = () => {
             {/* Divider */}
             <div className="bg-primary py-1"><div className="container mx-auto px-4"><div className="h-px bg-secondary/20"></div></div></div>
 
-            {/* ── CURRENT OWNER: Shaik Sadiq ── */}
+            {/* ── CURRENT OWNER: Shaik Sadik ── */}
             <section className="py-24 bg-light">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <motion.div className="flex flex-col lg:flex-row-reverse gap-16 items-start" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
                         <motion.div className="lg:w-5/12" variants={fadeUp}>
                             <div className="relative bg-white p-3 border border-gray-100 shadow-2xl">
-                                <img src="/images/about-site-work.jpg" alt="Shaik Sadiq - Current Owner" className="w-full grayscale hover:grayscale-0 transition-all duration-700" />
+                                <img src="/images/about-site-work.jpg" alt="Shaik Sadik - Current Owner" className="w-full grayscale hover:grayscale-0 transition-all duration-700" />
                                 <div className="bg-secondary text-center p-5">
-                                    <h2 className="text-primary font-heading font-bold text-xl uppercase tracking-wider">Shaik Sadiq</h2>
+                                    <h2 className="text-primary font-heading font-bold text-xl uppercase tracking-wider">Shaik Sadik</h2>
                                     <p className="text-primary/70 text-sm font-semibold mt-1">Owner & Operations Head</p>
                                 </div>
                             </div>
@@ -103,9 +103,9 @@ const Leadership = () => {
                                 Carrying The <span className="font-display italic text-secondary">Vision Forward</span>
                             </h3>
                             <div className="space-y-5 text-gray-600 text-lg font-light leading-relaxed">
-                                <p>Shaik Sadiq, son of founder Shaik Jani, represents the next generation of Sadiq Infra's leadership. Growing up on construction sites and learning the nuances of infrastructure execution from the ground level, Sadiq brings a unique combination of inherited field wisdom and modern management thinking.</p>
-                                <p>As the current operations head, Sadiq has been instrumental in scaling the firm's capabilities, strengthening vendor relationships, modernizing equipment deployment, and expanding the company's presence across both Andhra Pradesh and Telangana.</p>
-                                <p>Under his stewardship, Sadiq Infra continues to win new government contracts while also exploring opportunities in the private infrastructure sector — all while upholding the quality standards established by his father.</p>
+                                <p>Shaik Sadik, son of founder Shaik Jani, represents the next generation of Sadik Infra's leadership. Growing up on construction sites and learning the nuances of infrastructure execution from the ground level, Sadik brings a unique combination of inherited field wisdom and modern management thinking.</p>
+                                <p>As the current operations head, Sadik has been instrumental in scaling the firm's capabilities, strengthening vendor relationships, modernizing equipment deployment, and expanding the company's presence across both Andhra Pradesh and Telangana.</p>
+                                <p>Under his stewardship, Sadik Infra continues to win new government contracts while also exploring opportunities in the private infrastructure sector — all while upholding the quality standards established by his father.</p>
                             </div>
 
                             <div className="mt-10 flex flex-wrap gap-4">

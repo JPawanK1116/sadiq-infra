@@ -23,7 +23,7 @@ const Projects = () => {
     return (
         <div className="flex flex-col bg-white">
             <MetaWrapper
-                title="Project Portfolio | 33+ Government Projects – Sadiq Infra"
+                title="Project Portfolio | 33+ Government Projects – Sadik Infra"
                 description="Explore our high-value execution portfolio across Roads, Irrigation, Water Supply, Structural Works, and Government Housing."
             />
 

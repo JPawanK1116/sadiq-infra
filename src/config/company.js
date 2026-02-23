@@ -1,11 +1,11 @@
 export const companyConfig = {
-    name: "Sadiq Infra",
+    name: "Sadik Infra",
     tagline: "Building Trust. Delivering Strength.",
     fullDescription: "Government-Registered Infrastructure & Civil Engineering Firm",
     address: "Guntur, Andhra Pradesh, India",
-    phone: "+91 98765 43210", // Update with actual number
-    email: "contact@sadiqinfra.com", // Update with actual email
-    workingHours: "Mon - Sat: 9:00 AM - 7:00 PM",
+    phone: "+91 83740 39890",
+    email: "pawanjarugumallikalyan@gmail.com",
+    workingHours: "24/7 Project Support",
     founded: "2012",
     states: "Andhra Pradesh & Telangana",
     totalProjects: "33+",

@@ -4,7 +4,7 @@ import { contactConfig } from '../config/contact';
 
 const WhatsAppButton = () => {
     const handleClick = () => {
-        const message = "Hello Sadiq Infra, I am interested in your construction services.";
+        const message = "Hello Sadik Infra, I am interested in your construction services.";
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         const url = isMobile
             ? `https://wa.me/${contactConfig.whatsapp}?text=${encodeURIComponent(message)}`

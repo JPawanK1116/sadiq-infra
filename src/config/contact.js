@@ -1,5 +1,7 @@
 export const contactConfig = {
-    whatsapp: "+919876543210", // Update with actual WhatsApp number
+    whatsapp: "+918374039890",
+    notificationPhone: "+918374039890",
+    notificationEmail: "pawanjarugumallikalyan@gmail.com",
     emailjs: {
         serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || "",
         templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "",
