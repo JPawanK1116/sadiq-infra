@@ -1,9 +1,12 @@
 import React from 'react';
-import { MapPin, Calendar, ScrollText, IndianRupee } from 'lucide-react';
+import { MapPin, Calendar, IndianRupee } from 'lucide-react';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onClick }) => {
     return (
-        <div className="group relative overflow-hidden h-[220px] md:h-[380px] cursor-pointer bg-primary border border-white/5 premium-card">
+        <div
+            className="group relative overflow-hidden h-[220px] md:h-[380px] cursor-pointer bg-primary border border-white/5 premium-card"
+            onClick={() => onClick && onClick(project)}
+        >
             <img
                 src={project.image}
                 alt={project.title}
@@ -29,19 +32,17 @@ const ProjectCard = ({ project }) => {
                     <div className="hidden md:grid grid-cols-2 gap-1.5 text-gray-400 text-[11px] mb-3">
                         <div className="flex items-center"><MapPin size={10} className="mr-1 text-secondary" />{project.location}</div>
                         <div className="flex items-center"><Calendar size={10} className="mr-1 text-secondary" />{project.year}</div>
-                        <div className="flex items-center"><ScrollText size={10} className="mr-1 text-secondary" /><span className="truncate">{project.tenderId}</span></div>
-                        <div className="flex items-center"><IndianRupee size={10} className="mr-1 text-secondary" />{project.contractValue}</div>
+                        <div className="flex items-center col-span-2"><IndianRupee size={10} className="mr-1 text-secondary" />{project.contractValue}</div>
                     </div>
 
                     {/* Mobile details */}
                     <div className="flex md:hidden items-center gap-2 text-gray-400 text-[9px]">
                         <span className="flex items-center"><MapPin size={8} className="mr-0.5 text-secondary" />{project.location}</span>
-                        <span>•</span>
-                        <span>{project.contractValue}</span>
                     </div>
 
-                    <p className="text-gray-500 text-xs line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 border-t border-white/5 pt-2 hidden md:block">
-                        {project.description}
+                    {/* Tap indicator on mobile */}
+                    <p className="text-secondary/60 text-[8px] md:text-[10px] mt-1 md:mt-2 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity font-bold">
+                        Tap to view details →
                     </p>
                 </div>
             </div>

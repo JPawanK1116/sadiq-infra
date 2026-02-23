@@ -37,55 +37,36 @@ const ContactForm = () => {
             localStorage.setItem('sadik_leads_backup', JSON.stringify(storedLeads));
         } catch (err) { console.error("Backup failed", err); }
 
-        let emailSent = false;
-
+        // ─── 1. Send Email via FormSubmit.co ───
         try {
-            // Method 1: EmailJS (if configured via .env)
-            if (contactConfig.emailjs.serviceId && contactConfig.emailjs.templateId && contactConfig.emailjs.publicKey) {
-                const emailjs = await import('@emailjs/browser');
-                await emailjs.default.sendForm(
-                    contactConfig.emailjs.serviceId,
-                    contactConfig.emailjs.templateId,
-                    form.current,
-                    contactConfig.emailjs.publicKey
-                );
-                emailSent = true;
-            }
-        } catch (err) { console.warn("EmailJS attempt failed:", err); }
+            await fetch(`https://formsubmit.co/ajax/${contactConfig.notificationEmail}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    _subject: `🏗️ New Inquiry - Sadik Infra [${reference}]`,
+                    Name: data.user_name,
+                    Phone: `+91 ${data.phone}`,
+                    'Project Type': data.project_type,
+                    Location: data.location || 'Not specified',
+                    Budget: data.budget,
+                    Message: data.message || 'No additional details',
+                    'Reference ID': reference,
+                    _template: 'table',
+                }),
+            });
+        } catch (err) { console.warn("Email send attempt:", err); }
 
+        // ─── 2. Send SMS via CallMeBot WhatsApp API (free, works instantly) ───
         try {
-            // Method 2: FormSubmit.co (free, instant, no signup - sends to your email)
-            if (!emailSent) {
-                const response = await fetch(`https://formsubmit.co/ajax/${contactConfig.notificationEmail}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({
-                        _subject: `🏗️ New Inquiry - Sadik Infra [${reference}]`,
-                        Name: data.user_name,
-                        Phone: `+91 ${data.phone}`,
-                        'Project Type': data.project_type,
-                        Location: data.location || 'Not specified',
-                        Budget: data.budget,
-                        Message: data.message || 'No additional details',
-                        'Reference ID': reference,
-                        _template: 'table',
-                    }),
-                });
+            const smsText = `SADIK INFRA - New Inquiry\nName: ${data.user_name}\nPhone: ${data.phone}\nProject: ${data.project_type}\nLocation: ${data.location || 'N/A'}\nBudget: ${data.budget}\nRef: ${reference}`;
+            // CallMeBot WhatsApp API - sends WhatsApp message to your number
+            // To set up: Send "I allow callmebot to send me messages" to +34 644 59 71 67 on WhatsApp
+            const apiUrl = `https://api.callmebot.com/whatsapp.php?phone=${contactConfig.notificationPhone}&text=${encodeURIComponent(smsText)}&apikey=${contactConfig.callmebotApiKey}`;
 
-                const result = await response.json();
-                if (result.success === 'true' || result.success === true) {
-                    emailSent = true;
-                }
-            }
-        } catch (err) { console.warn("FormSubmit attempt failed:", err); }
-
-        // Method 3: WhatsApp notification as SMS fallback
-        try {
-            const whatsappMsg = `🏗️ NEW INQUIRY - Sadik Infra\n\n👤 ${data.user_name}\n📞 ${data.phone}\n📋 ${data.project_type}\n📍 ${data.location || 'N/A'}\n💰 ${data.budget}\n💬 ${data.message || 'N/A'}\n🔖 ${reference}`;
-            const whatsappUrl = `https://wa.me/${contactConfig.notificationPhone}?text=${encodeURIComponent(whatsappMsg)}`;
-            // Store the WhatsApp notification URL for manual trigger if needed
-            window.__lastInquiryWhatsApp = whatsappUrl;
-        } catch (err) { console.warn("WhatsApp URL generation failed:", err); }
+            // Use image approach to bypass CORS (fire-and-forget)
+            const img = new Image();
+            img.src = apiUrl;
+        } catch (err) { console.warn("WhatsApp notification attempt:", err); }
 
         setSuccess(true);
         form.current.reset();
@@ -98,25 +79,25 @@ const ContactForm = () => {
     return (
         <div>
             {success ? (
-                <div className="bg-green-50 border border-green-200 text-green-700 p-6 md:p-8 text-center">
-                    <CheckCircle size={48} className="mx-auto mb-4 text-green-500" />
-                    <h4 className="text-xl font-bold mb-2 font-heading">Request Received!</h4>
-                    <p className="mb-4 text-sm">Thank you for contacting us. Our team will reach out shortly.</p>
+                <div className="bg-green-50 border border-green-200 text-green-700 p-5 md:p-8 text-center">
+                    <CheckCircle size={40} className="mx-auto mb-3 text-green-500" />
+                    <h4 className="text-lg md:text-xl font-bold mb-2 font-heading">Request Received!</h4>
+                    <p className="mb-3 text-xs md:text-sm">Thank you for contacting us. Our team will reach out shortly.</p>
                     <div className="bg-white p-3 border border-green-100 inline-block">
-                        <span className="text-xs font-bold text-gray-500">Reference ID:</span>
-                        <span className="block text-lg font-mono font-bold text-secondary">{refId}</span>
+                        <span className="text-[10px] font-bold text-gray-500">Reference ID:</span>
+                        <span className="block text-base md:text-lg font-mono font-bold text-secondary">{refId}</span>
                     </div>
-                    <p className="text-xs text-gray-400 mt-4">A notification has been sent to our engineering team.</p>
-                    <button onClick={() => setSuccess(null)} className="block w-full mt-4 text-sm text-green-600 hover:text-green-800 underline">
+                    <p className="text-[10px] text-gray-400 mt-3">A notification has been sent to our team via email & WhatsApp.</p>
+                    <button onClick={() => setSuccess(null)} className="block w-full mt-3 text-xs text-green-600 hover:text-green-800 underline">
                         Send another request
                     </button>
                 </div>
             ) : (
-                <form ref={form} onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+                <form ref={form} onSubmit={handleSubmit} className="space-y-4">
                     <input type="hidden" name="reference" value={refId || ''} />
                     <input type="text" name="website" className="hidden" tabIndex="-1" autoComplete="off" />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label className={labelStyle}>Full Name *</label>
                             <input type="text" name="user_name" required className={inputStyle} placeholder="Your full name" />
@@ -164,20 +145,20 @@ const ContactForm = () => {
 
                     {error && (
                         <div className="flex items-center text-red-600 text-sm bg-red-50 p-3">
-                            <AlertCircle size={16} className="mr-2" /> {error}
+                            <AlertCircle size={16} className="mr-2 flex-shrink-0" /> {error}
                         </div>
                     )}
 
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`w-full bg-secondary text-primary py-3.5 md:py-4 font-bold text-sm uppercase tracking-wider hover:bg-primary hover:text-secondary transition-all flex items-center justify-center ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                        className={`w-full bg-secondary text-primary py-3.5 font-bold text-sm uppercase tracking-wider hover:bg-primary hover:text-secondary transition-all flex items-center justify-center ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                     >
                         {loading ? <Loader2 className="animate-spin mr-2" size={18} /> : <Send className="mr-2" size={16} />}
                         {loading ? 'Sending...' : 'Submit Inquiry'}
                     </button>
 
-                    <p className="text-[10px] text-center text-gray-400 uppercase tracking-wide">Your inquiry will be sent directly to our team.</p>
+                    <p className="text-[10px] text-center text-gray-400 uppercase tracking-wide">Your inquiry will be sent via email & WhatsApp to our team.</p>
                 </form>
             )}
         </div>

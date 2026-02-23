@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShieldCheck, ArrowRight, Building2, TrendingUp, CheckCircle, FileText, CheckSquare, Wrench, Truck, ChevronDown, Droplets, Waves, Shovel } from 'lucide-react';
@@ -6,12 +6,14 @@ import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
 import CTASection from '../components/CTASection';
 import MetaWrapper from '../components/MetaWrapper';
+import ProjectModal from '../components/ProjectModal';
 import { projectsData } from '../data/projectsData';
 
 const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } };
 const stagger = { visible: { transition: { staggerChildren: 0.15 } } };
 
 const Home = () => {
+    const [selectedProject, setSelectedProject] = useState(null);
     return (
         <div className="flex flex-col bg-white">
             <MetaWrapper
@@ -149,7 +151,7 @@ const Home = () => {
                     <motion.div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mt-8 md:mt-12" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
                         {projectsData.slice(0, 4).map((project) => (
                             <motion.div key={project.id} variants={fadeUp}>
-                                <ProjectCard project={project} />
+                                <ProjectCard project={project} onClick={setSelectedProject} />
                             </motion.div>
                         ))}
                     </motion.div>
@@ -198,6 +200,10 @@ const Home = () => {
 
             {/* â”€â”€ CTA â”€â”€ */}
             <CTASection />
+
+            {selectedProject && (
+                <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+            )}
         </div>
     );
 };
